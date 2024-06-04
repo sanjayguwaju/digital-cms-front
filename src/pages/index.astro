@@ -1,6 +1,10 @@
 ---
+import About from '../components/About.astro';
+import Facts from '../components/Facts.astro';
+import Features from '../components/Features.astro';
 import Hero from '../components/Hero.astro';
 import Navbar from '../components/Navbar.astro';
+
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -14,38 +18,12 @@ import Layout from '../layouts/Layout.astro';
     <!-- Spinner End -->
    <Navbar/>
    <Hero/>
-    <!-- Feature Start -->
-    <div class="container-xxl py-5">
-        <div class="container py-5 px-lg-5">
-            <div class="row g-4">
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="feature-item bg-light rounded text-center p-4">
-                        <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                        <h5 class="mb-3">Digital Marketing</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="feature-item bg-light rounded text-center p-4">
-                        <i class="fa fa-3x fa-search text-primary mb-4"></i>
-                        <h5 class="mb-3">SEO & Backlinks</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="feature-item bg-light rounded text-center p-4">
-                        <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                        <h5 class="mb-3">Design & Development</h5>
-                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Feature End -->
+   <Features/>
+   <About/>
+   <!-- <Facts/> -->
 
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container py-5 px-lg-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -86,7 +64,7 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- About End -->
 
     <!-- Facts Start -->
@@ -119,7 +97,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- Facts End -->
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container py-5 px-lg-5">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center"><span></span>Our Services<span></span></p>
@@ -188,7 +166,7 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Service End -->
 
     <!-- Newsletter Start -->
@@ -210,7 +188,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- Newsletter End -->
 
     <!-- Projects Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container py-5 px-lg-5">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span></p>
@@ -318,7 +296,7 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Projects End -->
 
     <!-- Testimonial Start -->
