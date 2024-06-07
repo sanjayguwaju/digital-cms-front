@@ -218,7 +218,7 @@ h6,
         url(../img/blob-bottom-left.png),
         url(../img/blob-bottom-right.png),
         url(../img/blob-center.png),
-        url(../img/bg-bottom.png);
+        url(../img/bg-bottomx.png);
     background-position:
         left 0px top 0px,
         right 0px top 0px,
@@ -319,7 +319,7 @@ h6,
 
 /*** Fact ***/
 .fact {
-    margin: 6rem 0;
+    /* margin: 6rem 0; */
     background:
         url(../img/blob-top-left.png),
         url(../img/blob-top-right.png),
@@ -447,7 +447,6 @@ h6,
 
 /*** Newsletter ***/
 .newsletter {
-    margin: 6rem 0;
     background:
         url(../img/blob-top-left.png),
         url(../img/blob-top-right.png),
@@ -514,7 +513,7 @@ h6,
     margin-top: 6rem;
     padding-top: 9rem;
     background:
-        url(../img/bg-top.png),
+        url(../img/bg-topx.png),
         url(../img/map.png);
     background-position:
         center top,

@@ -2,7 +2,7 @@
 const res = await fetch("http://localhost:5000/api/pages/665851dc7239d8039a580e54?locale=undefined&draft=false&depth=1")
 const featData = await res.json()
 ---
-<div class="container-xxl py-5">
+<div class="py-5">
   <div class="container py-5 px-lg-5">
     <div class="row g-4">
       {featData?.content.map((block, index) => (

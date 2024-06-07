@@ -1,5 +1,7 @@
 ---
 const { title } = Astro.props;
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <!DOCTYPE html>
@@ -35,7 +37,9 @@ const { title } = Astro.props;
     <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
+    <Navbar/>
     <slot />
+    <Footer/>
     
     <!-- JavaScript Libraries -->
     <script src="/lib/wow/wow.min.js" is:inline></script>
