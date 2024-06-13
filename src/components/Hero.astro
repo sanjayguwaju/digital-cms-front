@@ -9,22 +9,19 @@ const globalData = await res.json();
   <div class="container px-lg-5">
     <div class="row g-5 align-items-end">
       <div class="col-lg-6 text-center text-lg-start">
-        <h1 class="text-white mb-4 animated slideInDown">
-          {globalData?.title}
-        </h1>
-        <p class="text-white pb-3 animated slideInDown">
-          {globalData?.description}
-        </p>
+        <h1 class="text-white mb-4 animated slideInDown" set:html={globalData?.title} />
+          
+        <p class="text-white pb-3 animated slideInDown" set:html={globalData?.description} />
         <a
           href={globalData?.primaryButton?.link}
           class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft"
-          >{globalData.primaryButton.text}</a
-        >
+          set:html={globalData.primaryButton.text}
+        />
         <a
           href={globalData?.secondaryButton?.link}
           class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight"
-          >{globalData.secondaryButton.text}</a
-        >
+          set:html={globalData.secondaryButton.text}
+        />
       </div>
       <div class="col-lg-6 text-center text-lg-start">
         <img
