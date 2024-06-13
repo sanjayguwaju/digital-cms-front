@@ -1,7 +1,9 @@
 ---
 // Fetch the about data
 const fetchAbout = async () => {
-  const response = await fetch('http://localhost:5000/api/about/665855bb8a7f56ba1fc78a80?locale=undefined&draft=false&depth=1');
+  const response = await fetch(
+    "http://localhost:5000/api/about/665855bb8a7f56ba1fc78a80?locale=undefined&draft=false&depth=1"
+  );
   const data = await response.json();
   return data;
 };
@@ -14,24 +16,43 @@ const about = await fetchAbout();
   <div class="container py-5 px-lg-5">
     <div class="row g-5 align-items-center">
       <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-        <p class="section-title text-secondary">{about.subtitle}<span></span></p>
+        <p class="section-title text-secondary">
+          {about.subtitle}<span></span>
+        </p>
         <h1 class="mb-5">{about.title}</h1>
         <p class="mb-4">{about.description}</p>
-        {about.skills.map((skill, index) => (
-          <div key={index} class="skill mb-4">
-            <div class="d-flex justify-content-between">
-              <p class="mb-2">{skill.skillName}</p>
-              <p class="mb-2">{skill.skillLevel}%</p>
+        {
+          about.skills.map((skill, index) => (
+            <div key={index} class="skill mb-4">
+              <div class="d-flex justify-content-between">
+                <p class="mb-2">{skill.skillName}</p>
+                <p class="mb-2">{skill.skillLevel}%</p>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar bg-primary"
+                  role="progressbar"
+                  aria-valuenow={skill.skillLevel}
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style={{ width: `${skill.skillLevel}%` }}
+                />
+              </div>
             </div>
-            <div class="progress">
-              <div class="progress-bar bg-primary" role="progressbar" aria-valuenow={skill.skillLevel} aria-valuemin="0" aria-valuemax="100" style={{ width: `${skill.skillLevel}%` }}></div>
-            </div>
-          </div>
-        ))}
-        <a href={about.buttonLink} class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">{about.buttonText}</a>
+          ))
+        }
+        <a
+          href={about.buttonLink}
+          class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3"
+          >{about.buttonText}</a
+        >
       </div>
       <div class="col-lg-6">
-        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src={about.image}>
+        <img
+          class="img-fluid wow zoomIn"
+          data-wow-delay="0.5s"
+          src={about.image}
+        />
       </div>
     </div>
   </div>

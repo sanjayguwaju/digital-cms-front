@@ -1,25 +1,79 @@
 ---
 // Fetch the facts data
 const fetchFacts = async () => {
-  const response = await fetch('http://localhost:5000/api/facts/66585b63b1da32d9247fd9d4?locale=undefined&draft=false&depth=1');
+  const response = await fetch(
+    "http://localhost:5000/api/facts/66585b63b1da32d9247fd9d4?locale=undefined&draft=false&depth=1"
+  );
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
   const data = await response.json();
-  return data.docs; // assuming the API response has a `docs` array
+  return data.docs;
 };
 
 const facts = await fetchFacts();
+const facts1 = [
+      {
+        id: "66585b63b1da32d9247fd9d4",
+        icon: "fa fa-check fa-3x text-secondary mb-3",
+        count: 124,
+        description: "Complete Projects",
+        animationDelay: "0.3s",
+        createdAt: "2024-05-30T10:56:35.855Z",
+        updatedAt: "2024-05-30T10:56:48.724Z",
+      },
+      {
+        id: "66585b63b1da32d9247fd9d4",
+        icon: "fa fa-check fa-3x text-secondary mb-3",
+        count: 156,
+        description: "Complete Projects",
+        animationDelay: "0.3s",
+        createdAt: "2024-05-30T10:56:35.855Z",
+        updatedAt: "2024-05-30T10:56:48.724Z",
+      },
+      {
+        id: "66585b63b1da32d9247fd9d4",
+        icon: "fa fa-check fa-3x text-secondary mb-3",
+        count: 223,
+        description: "Complete Projects",
+        animationDelay: "0.3s",
+        createdAt: "2024-05-30T10:56:35.855Z",
+        updatedAt: "2024-05-30T10:56:48.724Z",
+      },
+      {
+        id: "66585b63b1da32d9247fd9d4",
+        icon: "fa fa-check fa-3x text-secondary mb-3",
+        count: 489,
+        description: "Complete Projects",
+        animationDelay: "0.3s",
+        createdAt: "2024-05-30T10:56:35.855Z",
+        updatedAt: "2024-05-30T10:56:48.724Z",
+      },
+    ]
 ---
 
 <!-- Astro Component -->
-<div class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div
+  class="container-xxl bg-primary fact py-5 wow fadeInUp"
+  data-wow-delay="0.1s"
+>
   <div class="container py-5 px-lg-5">
     <div class="row g-4">
-      {facts.map((fact, index) => (
-        <div key={index} class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay={fact.animationDelay}>
-          <i class={fact.icon}></i>
-          <h1 class="text-white mb-2" data-toggle="counter-up">{fact.count}</h1>
-          <p class="text-white mb-0">{fact.description}</p>
-        </div>
-      ))}
+      {
+        facts1?.map((fact, index) => (
+          <div
+            key={index}
+            class="col-md-6 col-lg-3 text-center wow fadeIn"
+            data-wow-delay={fact?.animationDelay}
+          >
+            <i class={fact?.icon} />
+            <h1 class="text-white mb-2" data-toggle="counter-up">
+              {fact?.count}
+            </h1>
+            <p class="text-white mb-0">{fact?.description}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </div>

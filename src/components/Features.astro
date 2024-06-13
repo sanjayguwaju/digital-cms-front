@@ -1,25 +1,31 @@
 ---
-const res = await fetch("http://localhost:5000/api/pages/665851dc7239d8039a580e54?locale=undefined&draft=false&depth=1")
-const featData = await res.json()
+const res = await fetch(
+  "http://localhost:5000/api/pages/665851dc7239d8039a580e54?locale=undefined&draft=false&depth=1"
+);
+const featData = await res.json();
 ---
+
 <div class="py-5">
   <div class="container py-5 px-lg-5">
     <div class="row g-4">
-      {featData?.content.map((block, index) => (
-        block.blockType === 'featureItem' && (
-          <div
-            key={index}
-            class={`col-lg-4 wow fadeInUp`}
-            data-wow-delay={block.animationDelay}
-          >
-            <div class="feature-item bg-light rounded text-center p-4">
-              <i class={`fa fa-3x ${block.icon} text-primary mb-4`}></i>
-              <h5 class="mb-3">{block.title}</h5>
-              <p class="m-0">{block.description}</p>
-            </div>
-          </div>
+      {
+        featData?.content.map(
+          (block, index) =>
+            block.blockType === "featureItem" && (
+              <div
+                key={index}
+                class={`col-lg-4 wow fadeInUp`}
+                data-wow-delay={block.animationDelay}
+              >
+                <div class="feature-item bg-light rounded text-center p-4">
+                  <i class={`fa fa-3x ${block.icon} text-primary mb-4`} />
+                  <h5 class="mb-3">{block.title}</h5>
+                  <p class="m-0">{block.description}</p>
+                </div>
+              </div>
+            )
         )
-      ))}
+      }
     </div>
   </div>
 </div>
